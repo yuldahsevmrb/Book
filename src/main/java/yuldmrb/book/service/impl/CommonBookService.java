@@ -8,10 +8,7 @@ import yuldmrb.book.persistance.BookRepository;
 import yuldmrb.book.persistance.model.Book;
 import yuldmrb.book.service.BookService;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -58,6 +55,7 @@ public class CommonBookService implements BookService {
         return authorSymbolCount.entrySet().stream()
                 .limit(10)
                 .map(entry -> new AuthorSymbolCount(entry.getKey(), entry.getValue()))
+                .sorted(Comparator.comparing(AuthorSymbolCount::symbolCount).reversed())
                 .toList();
     }
 }
