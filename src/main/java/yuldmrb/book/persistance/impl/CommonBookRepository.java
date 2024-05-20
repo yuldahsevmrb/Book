@@ -29,7 +29,7 @@ public class CommonBookRepository implements BookRepository {
     @Override
     public Book addBook(Book book) {
         final String sql = "INSERT INTO book (id, title, author, description) VALUES (?, ?, ?, ?)";
-        jdbcTemplate.update(sql, book.id(), book.author(), book.title(), book.description());
+        jdbcTemplate.update(sql, book.id(), book.title(), book.author(), book.description());
 
         return book;
     }
