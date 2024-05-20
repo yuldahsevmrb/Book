@@ -1,0 +1,19 @@
+### Получить все книги, отсортированные по названию
+GET http://localhost:8080/books
+
+### Добавить новую книгу
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "id": 6,
+  "title": "Fake Author",
+  "author": "Yuldashev Muzaffar",
+  "description": "Fake Description"
+}
+
+### Получить все книги, сгруппированные по автору
+GET http://localhost:8080/books/authors
+
+### Получить топ авторов по определенному символу
+GET http://localhost:8080/books/authors/top?character=A

@@ -22,11 +22,21 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-jdbc',
+            "org.springframework.boot:spring-boot-starter-validation",
+
+            'org.liquibase:liquibase-core',
+            'org.postgresql:postgresql'
+
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
+
 }
 
 tasks.named('test') {
